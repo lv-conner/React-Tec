@@ -5,6 +5,7 @@ import "./App.css";
 
 const Home = lazy(() => import('./components/Home'));
 const List = lazy(() => import('./components/List'));
+const Hook = lazy(() => import("./components/Hook"));
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -45,6 +46,7 @@ class App extends React.Component {
                             <Menu onClick={this.handleClick} style={{ width: 256 }} defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} mode="inline">
                                 <Menu.Item key="home"><Link to="/home">Home</Link></Menu.Item>
                                 <Menu.Item key="list"><Link to="/list">List</Link></Menu.Item>
+                                <Menu.Item key="hook"><Link to="/hook">Hook</Link></Menu.Item>
                             </Menu>
                         </div>
                         <div className="right">
@@ -55,6 +57,7 @@ class App extends React.Component {
                                 <Switch>
                                     <Route path="/home" exact component={props => <Home {...props} />} />
                                     <Route path="/list" exact component={props => <List {...props} />} />
+                                    <Route path="/hook" exact component={props => <Hook {...props} />} />
                                 </Switch>
                             </Suspense>
                         </div>
